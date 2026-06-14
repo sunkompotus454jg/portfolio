@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nesty | Мое Портфолио</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-effects"><div class="glow glow-1" style="background: var(--accent-secondary)"></div><div class="glow glow-2" style="background: var(--accent-primary)"></div></div>
+    
+    <header class="glass-nav">
+        <nav class="container" style="justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <a href="index.html" class="btn btn-secondary glass" style="padding: 0.5rem 1rem;" data-i18n="back_to_portfolio">← Назад в Портфолио</a>
+                <span class="logo">Port<span class="text-accent">folio.</span></span>
+            </div>
+            <div class="nav-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="uk">УКР</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ru">рус</button>
+                </div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme"></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container section-padding" style="padding-top: 8rem;">
+        <article class="project-detail glass fade-in" style="padding: 3rem; border-radius: 24px;">
+            <div class="steam-layout">
+                <div class="steam-left">
+                    <div class="media-gallery">
+                        <div class="main-media" id="mainMediaContainer" style="overflow: hidden; border-radius: 12px; background: #000; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+                            <video controls autoplay style="width: 100%; height: 100%; object-fit: contain;">
+                                <source src="Nesty/Preview.mov" type="video/quicktime">
+                                <source src="Nesty/Preview.mov" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="thumbnail-slider" style="margin-top: 1rem; display: flex; gap: 0.5rem; overflow-x: auto;">
+                            <div class="thumbnail active" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0; position: relative;" data-type="video" data-src="Nesty/Preview.mov">
+                                <video style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" muted>
+                                    <source src="Nesty/Preview.mov" type="video/mp4">
+                                </video>
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 24px; height: 24px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                                </div>
+                            </div>
+                            <div class="thumbnail" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0;" data-type="image" data-src="Nesty/ЖЕЛТЫЙ ФОН.png"><img src="Nesty/ЖЕЛТЫЙ ФОН.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"></div>
+                            <div class="thumbnail" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0;" data-type="image" data-src="Nesty/ЗЕЛЕНЫЙ   ФОН.png"><img src="Nesty/ЗЕЛЕНЫЙ   ФОН.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"></div>
+                            <div class="thumbnail" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0;" data-type="image" data-src="Nesty/КРАСНО СИНИЙ.png"><img src="Nesty/КРАСНО СИНИЙ.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"></div>
+                            <div class="thumbnail" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0;" data-type="image" data-src="Nesty/РОЗОВЫЙ  ФОН.png"><img src="Nesty/РОЗОВЫЙ  ФОН.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"></div>
+                            <div class="thumbnail" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0;" data-type="image" data-src="Nesty/СЕРЫЙ  ФОН.png"><img src="Nesty/СЕРЫЙ  ФОН.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"></div>
+                            <div class="thumbnail" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0;" data-type="image" data-src="Nesty/СИНИЙ ФОН.png"><img src="Nesty/СИНИЙ ФОН.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="steam-right">
+                    <h1 class="hero-title text-gradient" style="margin-bottom: 1rem; font-size: 2.5rem; text-align: left;">Nesty</h1>
+                    <p class="hero-subtitle" style="margin-bottom: 1.5rem; text-align: left;" data-i18n="nesty_subtitle_full">Стильная и легковесная утилита для Windows, созданная для идеального порядка на рабочем столе.</p>
+                    
+                    <div class="project-info-table">
+                        <div class="info-row"><span class="info-label" data-i18n="label_platform">Платформа:</span> <span class="info-value">Windows Desktop</span></div>
+                        <div class="info-row"><span class="info-label" data-i18n="label_tech">Технологии:</span> 
+                            <div class="project-tags" style="margin-top: 0.5rem; justify-content: flex-start;">
+                                <span class="tag">Python</span><span class="tag">PyQt6</span><span class="tag">Windows API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="readme-content">
+                <h2 data-i18n="nesty_feat_title"> Главные фишки</h2>
+                <ul>
+                    <li data-i18n="nesty_feat_1"><strong> Умное сворачивание:</strong> Окна автоматически сворачиваются в тонкую шапку, когда мышь уходит за их пределы, и плавно разворачиваются при наведении.</li>
+                    <li data-i18n="nesty_feat_2"><strong> Магнитное прилипание (Snapping):</strong> Сетки аккуратно магнитятся друг к другу и к краям экрана (дистанция 20 пикселей) для создания идеального пиксельного порядка.</li>
+                    <li data-i18n="nesty_feat_3"><strong> Глубокая кастомизация:</strong> 5 встроенных неоновых пресетов (Синий, Фиолетовый, Зеленый, Оранжевый, Красный) + возможность создать свой собственный пресет по HEX-коду через встроенную палитру.</li>
+                    <li data-i18n="nesty_feat_4"><strong> Безопасность файлов:</strong> При удалении сетки все файлы из неё автоматически и безопасно перемещаются обратно на Рабочий стол.</li>
+                    <li data-i18n="nesty_feat_5"><strong> Интеграция с Windows:</strong> Программа добавляет пункт "Создать Сетку (Fences)" прямо в контекстное меню рабочего стола и автоматически запускается вместе с системой.</li>
+                    <li data-i18n="nesty_feat_6"><strong> Drag & Drop:</strong> Файлы легко перетаскиваются внутрь сетки обычным движением мыши.</li>
+                </ul>
+
+                <h2 data-i18n="nesty_install_title"> Установка</h2>
+                <p data-i18n="nesty_install_desc">Поскольку программа упакована в полноценный инсталлятор, установка занимает всего пару кликов:</p>
+                <ol>
+                    <li data-i18n="nesty_install_1">Запустите файл <code>Nesty_Setup.exe</code>.</li>
+                    <li data-i18n="nesty_install_2">Следуйте инструкциям на экране. Установщик автоматически добавит программу в Автозагрузку и пропишет контекстное меню.</li>
+                    <li data-i18n="nesty_install_3">Готово! Программа уже работает в фоновом режиме.</li>
+                </ol>
+
+                <h2 data-i18n="nesty_dev_title"> Для разработчиков (Сборка из исходников)</h2>
+                <pre><code>pip install pyqt6 pyinstaller
+pyinstaller --noconsole --onefile --name="Nesty" --icon=icoc.ico main.py</code></pre>
+            </div>
+
+            <div style="margin-top: 4rem; text-align: center;">
+                <a href="https://github.com/sunkompotus454jg/Nesty.git" target="_blank" class="btn btn-primary" data-i18n="btn_github">Посмотреть на GitHub</a>
+            </div>
+        </article>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainMediaContainer = document.getElementById('mainMediaContainer');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const type = this.getAttribute('data-type');
+                    const src = this.getAttribute('data-src');
+
+                    if (type === 'video') {
+                        mainMediaContainer.innerHTML = `<video controls autoplay style="width: 100%; height: 100%; object-fit: contain;">
+                            <source src="${src}" type="video/quicktime">
+                            <source src="${src}" type="video/mp4">
+                        </video>`;
+                    } else if (type === 'image') {
+                        mainMediaContainer.innerHTML = `<img src="${src}" style="width: 100%; height: 100%; object-fit: contain;">`;
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="lang.js"></script>
+</body>
+</html>

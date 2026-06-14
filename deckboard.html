@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeckBoard | Мое Портфолио</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-effects"><div class="glow glow-1" style="background: #f59e0b"></div><div class="glow glow-2" style="background: #fbbf24"></div></div>
+    
+    <header class="glass-nav">
+        <nav class="container" style="justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <a href="index.html" class="btn btn-secondary glass" style="padding: 0.5rem 1rem;" data-i18n="back_to_portfolio">← Назад в Портфолио</a>
+                <span class="logo">Port<span class="text-accent" style="color: #f59e0b;">folio.</span></span>
+            </div>
+            <div class="nav-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="uk">УКР</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ru">рус</button>
+                </div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme"></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container section-padding" style="padding-top: 8rem;">
+        <article class="project-detail glass fade-in" style="padding: 3rem; border-radius: 24px;">
+            <div class="steam-layout">
+                <div class="steam-left">
+                    <div class="media-gallery">
+                        <div class="main-media">
+                            <div class="media-placeholder flex-center">
+                                <span class="text-muted">Основное Превью (16:9)</span>
+                            </div>
+                        </div>
+                        <div class="thumbnail-slider">
+                            <div class="thumbnail active flex-center" style="border-color: #f59e0b;"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_1">Скрин 1</span></div>
+                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_2">Скрин 2</span></div>
+                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_3">Скрин 3</span></div>
+                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_4">Скрин 4</span></div>
+                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="video">Видео</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="steam-right">
+                    <h1 class="hero-title text-gradient" style="background: linear-gradient(135deg, #f59e0b, #fbbf24); -webkit-background-clip: text; background-clip: text; margin-bottom: 1rem; font-size: 2.5rem; text-align: left;">DeckBoard</h1>
+                    <p class="hero-subtitle" style="margin-bottom: 1.5rem; text-align: left;" data-i18n="deckboard_subtitle">Мощная экосистема для дистанционного управления вашим компьютером прямо со смартфона.</p>
+                    
+                    <div class="project-info-table">
+                        <div class="info-row"><span class="info-label" data-i18n="label_platform">Платформа:</span> <span class="info-value">Android + Windows</span></div>
+                        <div class="info-row"><span class="info-label" data-i18n="label_tech">Технологии:</span> 
+                            <div class="project-tags" style="margin-top: 0.5rem; justify-content: flex-start;">
+                                <span class="tag">Kotlin/Android</span><span class="tag">Python Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="readme-content">
+                <h2 data-i18n="deckboard_feat_title"> Основные возможности</h2>
+                
+                <h3 data-i18n="deckboard_android_title"> Android Приложение (Client)</h3>
+                <ul>
+                    <li data-i18n="deckboard_android_1"><strong>Кастомизация:</strong> Полная свобода действий с поддержкой Drag-and-Drop для сортировки плиток.</li>
+                    <li data-i18n="deckboard_android_2"><strong>Интуитивность:</strong> Современный интерфейс с плавной анимацией и обратной связью.</li>
+                    <li data-i18n="deckboard_android_3"><strong>Умное подключение:</strong> Автоматический поиск сервера в локальной сети или ручной ввод IP с сохранением.</li>
+                </ul>
+
+                <h3 data-i18n="deckboard_pc_title"> PC Сервер (Python)</h3>
+                <ul>
+                    <li data-i18n="deckboard_pc_1"><strong>Управление звуком:</strong> Быстрое переключение мута микрофона и системного звука (Speakers).</li>
+                    <li data-i18n="deckboard_pc_2"><strong>Интеграция с OBS:</strong> Дистанционный запуск и остановка записи через WebSocket.</li>
+                    <li data-i18n="deckboard_pc_3"><strong>Запуск софта:</strong> Возможность добавлять любые ярлыки (.exe, .lnk, .url) прямо из системного трея.</li>
+                    <li data-i18n="deckboard_pc_4"><strong>Удобство:</strong> Текущий IP-адрес сервера всегда виден в меню трея для быстрой настройки.</li>
+                </ul>
+
+                <h2 data-i18n="deckboard_structure_title"> Структура проекта</h2>
+                <p data-i18n="deckboard_structure_desc">Репозиторий разделен на две логические части:</p>
+                <ul>
+                    <li data-i18n="deckboard_structure_1"><code>/AndroidApp</code> — Исходный код мобильного приложения (Kotlin/Android Studio).</li>
+                    <li data-i18n="deckboard_structure_2"><code>/pc-server</code> — Серверная часть на Python с использованием Flask и PyStray.</li>
+                </ul>
+
+                <h2 data-i18n="deckboard_stack_title"> Технологический стек</h2>
+                <p data-i18n="deckboard_stack_1"><strong>Android:</strong> Kotlin, Retrofit2, SharedPreferences, ItemTouchHelper.</p>
+                <p data-i18n="deckboard_stack_2"><strong>Backend:</strong> Python, Flask, OBS-WebSocket, PyCaw, PyStray, NirCmd.</p>
+            </div>
+
+            <div style="margin-top: 4rem; text-align: center;">
+                <a href="https://github.com/sunkompotus454jg/DeckBoard_Final.git" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);" data-i18n="btn_github">Посмотреть на GitHub</a>
+            </div>
+        </article>
+    </main>
+    <script src="script.js"></script>
+    <script src="lang.js"></script>
+</body>
+</html>

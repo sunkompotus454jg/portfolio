@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeCinema | Мое Портфолио</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-effects"><div class="glow glow-1" style="background: #ef4444"></div><div class="glow glow-2" style="background: #f87171"></div></div>
+    
+    <header class="glass-nav">
+        <nav class="container" style="justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <a href="index.html" class="btn btn-secondary glass" style="padding: 0.5rem 1rem;" data-i18n="back_to_portfolio">← Назад в Портфолио</a>
+                <span class="logo">Port<span class="text-accent" style="color: #ef4444;">folio.</span></span>
+            </div>
+            <div class="nav-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="uk">УКР</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ru">рус</button>
+                </div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme"></button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container section-padding" style="padding-top: 8rem;">
+        <article class="project-detail glass fade-in" style="padding: 3rem; border-radius: 24px;">
+            <div class="steam-layout">
+                <div class="steam-left">
+                    <div class="media-gallery">
+                        <div class="main-media">
+                            <div class="media-placeholder flex-center">
+                                <span class="text-muted">Основное Превью (16:9)</span>
+                            </div>
+                        </div>
+                        <div class="thumbnail-slider">
+                            <div class="thumbnail active flex-center" style="border-color: #ef4444;"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_1">Скрин 1</span></div>
+                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_2">Скрин 2</span></div>
+                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_3">Скрин 3</span></div>
+                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_4">Скрин 4</span></div>
+                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="video">Видео</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="steam-right">
+                    <div style="display: inline-block; background: rgba(239, 68, 68, 0.1); color: #ef4444; padding: 0.35rem 0.75rem; border-radius: 20px; font-weight: 500; font-size: 0.8rem; margin-bottom: 1rem; border: 1px solid rgba(239, 68, 68, 0.2);" data-i18n="homecinema_badge"> В активной разработке</div>
+                    <h1 class="hero-title text-gradient" style="background: linear-gradient(135deg, #ef4444, #f87171); -webkit-background-clip: text; background-clip: text; margin-bottom: 1rem; font-size: 2.5rem; text-align: left;">HomeCinema</h1>
+                    <p class="hero-subtitle" style="margin-bottom: 1.5rem; text-align: left;" data-i18n="homecinema_subtitle">Собственный локальный домашний кинотеатр, связывающий Android TV с сетевым хранилищем.</p>
+                    
+                    <div class="project-info-table">
+                        <div class="info-row"><span class="info-label" data-i18n="label_platform">Платформа:</span> <span class="info-value">Android TV / Web</span></div>
+                        <div class="info-row"><span class="info-label" data-i18n="label_tech">Технологии:</span> 
+                            <div class="project-tags" style="margin-top: 0.5rem; justify-content: flex-start;">
+                                <span class="tag">Android TV</span><span class="tag">Media Server</span><span class="tag">Web Admin Panel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="readme-content">
+                <h2 data-i18n="homecinema_concept_title">Концепция</h2>
+                <p data-i18n="homecinema_concept_p1">HomeCinema — это проект, который связывает телевизоры на базе Android с локальным хранилищем (NAS) в домашней сети, позволяя с комфортом смотреть фильмы и сериалы.</p>
+                <p data-i18n="homecinema_concept_p2">Оформление и пользовательский опыт (UX) вдохновлены популярными стриминговыми сервисами, но работают полностью локально и без задержек.</p>
+
+                <h2 data-i18n="homecinema_feat_title">Ключевые фичи (Текущий билд)</h2>
+                <ul>
+                    <li data-i18n="homecinema_feat_1"><strong>Собственная Админ-панель:</strong> Удобный веб-интерфейс, через который легко загружать новые фильмы в библиотеку.</li>
+                    <li data-i18n="homecinema_feat_2"><strong>Умное автозаполнение:</strong> При добавлении фильма обложки, описания и метаданные подтягиваются автоматически.</li>
+                    <li data-i18n="homecinema_feat_3"><strong>Плавный UI для Android TV:</strong> Интерфейс адаптирован специально для управления с пульта ДУ телевизора.</li>
+                </ul>
+                
+                <p><em data-i18n="homecinema_note">Проект на данный момент не опубликован на GitHub, так как находится в стадии активной разработки, но уже имеет полностью рабочий билд.</em></p>
+            </div>
+
+            <div style="margin-top: 4rem; text-align: center;">
+                <button class="btn btn-secondary glass" disabled style="opacity: 0.6; cursor: not-allowed;" data-i18n="btn_repo_closed">Репозиторий пока закрыт</button>
+            </div>
+        </article>
+    </main>
+    <script src="script.js"></script>
+    <script src="lang.js"></script>
+</body>
+</html>
