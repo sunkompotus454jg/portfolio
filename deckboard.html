@@ -32,17 +32,25 @@
             <div class="steam-layout">
                 <div class="steam-left">
                     <div class="media-gallery">
-                        <div class="main-media">
-                            <div class="media-placeholder flex-center">
-                                <span class="text-muted">Основное Превью (16:9)</span>
-                            </div>
+                        <div class="main-media" id="mainMediaContainer" style="overflow: hidden; border-radius: 12px; background: #000; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+                            <video controls autoplay style="width: 100%; height: 100%; object-fit: contain;">
+                                <source src="DeckBoard/DeckBoard.mov" type="video/quicktime">
+                                <source src="DeckBoard/DeckBoard.mov" type="video/mp4">
+                            </video>
                         </div>
-                        <div class="thumbnail-slider">
-                            <div class="thumbnail active flex-center" style="border-color: #f59e0b;"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_1">Скрин 1</span></div>
-                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_2">Скрин 2</span></div>
-                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_3">Скрин 3</span></div>
-                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="screen_4">Скрин 4</span></div>
-                            <div class="thumbnail flex-center"><span class="text-muted" style="font-size: 0.75rem;" data-i18n="video">Видео</span></div>
+                        <div class="thumbnail-slider" style="margin-top: 1rem; display: flex; gap: 0.5rem; overflow-x: auto;">
+                            <div class="thumbnail active" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0; position: relative;" data-type="video" data-src="DeckBoard/DeckBoard.mov">
+                                <video style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" muted>
+                                    <source src="DeckBoard/DeckBoard.mov" type="video/mp4">
+                                </video>
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 24px; height: 24px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                                </div>
+                            </div>
+                            <div class="thumbnail" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0;" data-type="image" data-src="DeckBoard/0-02-05-0bac8bb364532d85e3111e03711d1aa4060bebcc396dedf0be62782c29c5c9a9_ad3d1ba58927e775.jpg"><img src="DeckBoard/0-02-05-0bac8bb364532d85e3111e03711d1aa4060bebcc396dedf0be62782c29c5c9a9_ad3d1ba58927e775.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"></div>
+                            <div class="thumbnail" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0;" data-type="image" data-src="DeckBoard/0-02-05-264c7cac3fc6bc0957b05c044b411469ea388073dea34933a9ebbe254137f1c2_e28caed43b76f39c.jpg"><img src="DeckBoard/0-02-05-264c7cac3fc6bc0957b05c044b411469ea388073dea34933a9ebbe254137f1c2_e28caed43b76f39c.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"></div>
+                            <div class="thumbnail" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0;" data-type="image" data-src="DeckBoard/0-02-05-5bc262948371ed0c1ebc7de4d4290da5d84f6956d29290988b75e18774860aac_ec5341163a569b74.jpg"><img src="DeckBoard/0-02-05-5bc262948371ed0c1ebc7de4d4290da5d84f6956d29290988b75e18774860aac_ec5341163a569b74.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"></div>
+                            <div class="thumbnail" style="overflow: hidden; border-radius: 8px; cursor: pointer; flex-shrink: 0;" data-type="image" data-src="DeckBoard/0-02-05-ea6e1e9ae86b6518db8610bf6916381d59754181134fe9befbcb5e5051da6cba_935a3331d2ab0db5.jpg"><img src="DeckBoard/0-02-05-ea6e1e9ae86b6518db8610bf6916381d59754181134fe9befbcb5e5051da6cba_935a3331d2ab0db5.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -96,6 +104,31 @@
             </div>
         </article>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainMediaContainer = document.getElementById('mainMediaContainer');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const type = this.getAttribute('data-type');
+                    const src = this.getAttribute('data-src');
+
+                    if (type === 'video') {
+                        mainMediaContainer.innerHTML = `<video controls autoplay style="width: 100%; height: 100%; object-fit: contain;">
+                            <source src="${src}" type="video/quicktime">
+                            <source src="${src}" type="video/mp4">
+                        </video>`;
+                    } else if (type === 'image') {
+                        mainMediaContainer.innerHTML = `<img src="${src}" style="width: 100%; height: 100%; object-fit: contain;">`;
+                    }
+                });
+            });
+        });
+    </script>
     <script src="script.js"></script>
     <script src="lang.js"></script>
 </body>
