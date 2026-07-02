@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(overlay);
 
     const lightboxContent = overlay.querySelector('#lightboxContent');
-    const lightboxClose  = overlay.querySelector('#lightboxClose');
+    const lightboxClose   = overlay.querySelector('#lightboxClose');
 
     function openLightbox(src, isVideo) {
         lightboxContent.innerHTML = isVideo
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                    <source src="${src}" type="video/quicktime">
                    <source src="${src}" type="video/mp4">
                </video>`
-            : `<img src="${src}" alt="Preview">`;
+            : `<img src="${src}" alt="Preview" style="max-width:92vw;max-height:92vh;display:block;">`;
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -115,21 +115,35 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxContent.innerHTML = '';
     }
 
-    // Клик на главный контейнер медиа
-    document.addEventListener('click', (e) => {
-        const container = e.target.closest('#mainMediaContainer');
-        if (container) {
-            const img   = container.querySelector('img');
-            const video = container.querySelector('video source');
-            if (video) {
-                openLightbox(video.getAttribute('src'), true);
+    // Навешиваем клик напрямую на контейнер
+    function bindLightbox() {
+        const mc = document.getElementById('mainMediaContainer');
+        if (!mc || mc._lightboxBound) return;
+        mc._lightboxBound = true;
+        mc.style.cursor = 'zoom-in';
+        mc.addEventListener('click', () => {
+            const img      = mc.querySelector('img');
+            const vidSrc   = mc.querySelector('video source');
+            if (vidSrc) {
+                openLightbox(vidSrc.getAttribute('src'), true);
             } else if (img) {
                 openLightbox(img.getAttribute('src'), false);
             }
-        }
-    });
+        });
+    }
 
-    // Закрытие по кнопке, по фону, по Escape
+    bindLightbox();
+
+    // Следим за изменениями в DOM (на случай если thumbnail-скрипт заменяет innerHTML)
+    const mc = document.getElementById('mainMediaContainer');
+    if (mc) {
+        new MutationObserver(() => {
+            mc._lightboxBound = false;
+            bindLightbox();
+        }).observe(mc, { childList: true, subtree: false });
+    }
+
+    // Закрытие
     lightboxClose.addEventListener('click', closeLightbox);
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) closeLightbox();
