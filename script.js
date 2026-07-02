@@ -85,4 +85,56 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 5. Лайтбокс — открытие на весь экран при клике на главный медиа
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = `
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <div class="lightbox-content" id="lightboxContent"></div>
+    `;
+    document.body.appendChild(overlay);
+
+    const lightboxContent = overlay.querySelector('#lightboxContent');
+    const lightboxClose  = overlay.querySelector('#lightboxClose');
+
+    function openLightbox(src, isVideo) {
+        lightboxContent.innerHTML = isVideo
+            ? `<video controls autoplay style="max-width:92vw;max-height:92vh;">
+                   <source src="${src}" type="video/quicktime">
+                   <source src="${src}" type="video/mp4">
+               </video>`
+            : `<img src="${src}" alt="Preview">`;
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        lightboxContent.innerHTML = '';
+    }
+
+    // Клик на главный контейнер медиа
+    document.addEventListener('click', (e) => {
+        const container = e.target.closest('#mainMediaContainer');
+        if (container) {
+            const img   = container.querySelector('img');
+            const video = container.querySelector('video source');
+            if (video) {
+                openLightbox(video.getAttribute('src'), true);
+            } else if (img) {
+                openLightbox(img.getAttribute('src'), false);
+            }
+        }
+    });
+
+    // Закрытие по кнопке, по фону, по Escape
+    lightboxClose.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
 });
