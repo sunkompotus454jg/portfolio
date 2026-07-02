@@ -86,69 +86,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Лайтбокс — открытие на весь экран при клике на главный медиа
+});
+
+// ===================== ГЛОБАЛЬНЫЙ ЛАЙТБОКС =====================
+(function () {
+    // Создаём оверлей один раз
     const overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
     overlay.innerHTML = `
         <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <div class="lightbox-content" id="lightboxContent"></div>
+        <div class="lightbox-content" id="lightboxInner"></div>
     `;
-    document.body.appendChild(overlay);
 
-    const lightboxContent = overlay.querySelector('#lightboxContent');
-    const lightboxClose   = overlay.querySelector('#lightboxClose');
+    function init() {
+        if (document.getElementById('lightboxClose')) return; // уже добавлен
+        document.body.appendChild(overlay);
 
-    function openLightbox(src, isVideo) {
-        lightboxContent.innerHTML = isVideo
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) closeLightbox();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    }
+
+    window.openLightbox = function (src, isVideo) {
+        init();
+        const inner = document.getElementById('lightboxInner');
+        inner.innerHTML = isVideo
             ? `<video controls autoplay style="max-width:92vw;max-height:92vh;">
                    <source src="${src}" type="video/quicktime">
                    <source src="${src}" type="video/mp4">
                </video>`
-            : `<img src="${src}" alt="Preview" style="max-width:92vw;max-height:92vh;display:block;">`;
+            : `<img src="${src}" alt="fullscreen" style="max-width:92vw;max-height:92vh;display:block;border-radius:12px;">`;
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
-    }
+    };
 
     function closeLightbox() {
         overlay.classList.remove('active');
         document.body.style.overflow = '';
-        lightboxContent.innerHTML = '';
+        const inner = document.getElementById('lightboxInner');
+        if (inner) inner.innerHTML = '';
     }
-
-    // Навешиваем клик напрямую на контейнер
-    function bindLightbox() {
-        const mc = document.getElementById('mainMediaContainer');
-        if (!mc || mc._lightboxBound) return;
-        mc._lightboxBound = true;
-        mc.style.cursor = 'zoom-in';
-        mc.addEventListener('click', () => {
-            const img      = mc.querySelector('img');
-            const vidSrc   = mc.querySelector('video source');
-            if (vidSrc) {
-                openLightbox(vidSrc.getAttribute('src'), true);
-            } else if (img) {
-                openLightbox(img.getAttribute('src'), false);
-            }
-        });
-    }
-
-    bindLightbox();
-
-    // Следим за изменениями в DOM (на случай если thumbnail-скрипт заменяет innerHTML)
-    const mc = document.getElementById('mainMediaContainer');
-    if (mc) {
-        new MutationObserver(() => {
-            mc._lightboxBound = false;
-            bindLightbox();
-        }).observe(mc, { childList: true, subtree: false });
-    }
-
-    // Закрытие
-    lightboxClose.addEventListener('click', closeLightbox);
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) closeLightbox();
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeLightbox();
-    });
-});
+}());

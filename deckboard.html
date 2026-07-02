@@ -32,8 +32,8 @@
             <div class="steam-layout">
                 <div class="steam-left">
                     <div class="media-gallery">
-                        <div class="main-media" id="mainMediaContainer" style="overflow: hidden; border-radius: 12px; background: #000; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-                            <video controls autoplay style="width: 100%; height: 100%; object-fit: contain;">
+                        <div class="main-media" id="mainMediaContainer" onclick="var v=this.querySelector('video source');var i=this.querySelector('img');if(v)openLightbox(v.src,true);else if(i)openLightbox(i.src,false);" style="overflow: hidden; border-radius: 12px; background: #000; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; cursor: zoom-in; position: relative;">
+                            <video controls autoplay style="width: 100%; height: 100%; object-fit: contain; pointer-events: none;">
                                 <source src="DeckBoard/DeckBoard.mov" type="video/quicktime">
                                 <source src="DeckBoard/DeckBoard.mov" type="video/mp4">
                             </video>
