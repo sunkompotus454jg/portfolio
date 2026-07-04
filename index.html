@@ -120,49 +120,90 @@
                 <h2 class="section-title"><span data-i18n="services_title_1">Мої</span> <span class="text-gradient" data-i18n="services_title_2">Послуги</span></h2>
                 <p class="section-subtitle" data-i18n="services_subtitle">Що саме я можу зробити для вас</p>
             </div>
-            <div class="spec-grid">
-                <!-- Десктоп-застосунки -->
-                <div class="spec-card glass fade-in">
-                    <div class="spec-icon" style="color: #06b6d4;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            <div class="srv-grid">
+                <!-- Десктоп -->
+                <div class="srv-card glass fade-in">
+                    <div class="srv-card-header">
+                        <div class="srv-icon" style="background: rgba(6,182,212,0.12); color: #06b6d4;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <h3 class="srv-title" data-i18n="srv_desktop_title">Розробка десктоп-застосунків</h3>
                     </div>
-                    <h3 class="spec-title" data-i18n="srv_desktop_title">Розробка десктоп-застосунків</h3>
-                    <p class="spec-desc" data-i18n="srv_desktop_desc">Створюю кастомні утиліти та інструменти під Windows — від автоматизації рутинних задач до застосунків з власним інтерфейсом під конкретні потреби користувача.</p>
+                    <p class="srv-desc" data-i18n="srv_desktop_desc">Створюю кастомні утиліти та інструменти під Windows — від автоматизації рутинних задач до застосунків з власним інтерфейсом.</p>
+                    <ul class="srv-features">
+                        <li data-i18n="srv_desktop_f1">Кастомний UI (PyQt6, Electron, WPF/C#)</li>
+                        <li data-i18n="srv_desktop_f2">Автоматизація задач і системні скрипти</li>
+                        <li data-i18n="srv_desktop_f3">Інтеграція з Windows API і реєстром</li>
+                        <li data-i18n="srv_desktop_f4">Готові до дистрибуції (.exe, інсталятори)</li>
+                    </ul>
                 </div>
                 <!-- Telegram-боти -->
-                <div class="spec-card glass fade-in" style="transition-delay: 100ms;">
-                    <div class="spec-icon" style="color: #8b5cf6;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <div class="srv-card glass fade-in" style="transition-delay: 100ms;">
+                    <div class="srv-card-header">
+                        <div class="srv-icon" style="background: rgba(139,92,246,0.12); color: #8b5cf6;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </div>
+                        <h3 class="srv-title" data-i18n="srv_bots_title">Telegram-боти з інтеграцією AI</h3>
                     </div>
-                    <h3 class="spec-title" data-i18n="srv_bots_title">Telegram-боти з інтеграцією AI</h3>
-                    <p class="spec-desc" data-i18n="srv_bots_desc">Пишу ботів, які вміють більше за стандартні команди: розпізнавання голосу, робота з LLM, обробка запитів природною мовою, автоматичні відповіді та сценарії під бізнес-задачі.</p>
+                    <p class="srv-desc" data-i18n="srv_bots_desc">Пишу ботів, які вміють більше за стандартні команди — від простої автоматизації до повноцінних AI-асистентів.</p>
+                    <ul class="srv-features">
+                        <li data-i18n="srv_bots_f1">Розпізнавання голосу (Whisper / Groq)</li>
+                        <li data-i18n="srv_bots_f2">Інтеграція з LLM (GPT, Groq, Gemini)</li>
+                        <li data-i18n="srv_bots_f3">Обробка природної мови та NLP-сценарії</li>
+                        <li data-i18n="srv_bots_f4">Бізнес-воронки та автовідповіді</li>
+                    </ul>
                 </div>
                 <!-- Android -->
-                <div class="spec-card glass fade-in" style="transition-delay: 200ms;">
-                    <div class="spec-icon" style="color: #34d399;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                <div class="srv-card glass fade-in" style="transition-delay: 200ms;">
+                    <div class="srv-card-header">
+                        <div class="srv-icon" style="background: rgba(52,211,153,0.12); color: #34d399;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        </div>
+                        <h3 class="srv-title" data-i18n="srv_android_title">Android-застосунки</h3>
                     </div>
-                    <h3 class="spec-title" data-i18n="srv_android_title">Android-застосунки</h3>
-                    <p class="spec-desc" data-i18n="srv_android_desc">Розробка мобільних застосунків під Android — від простих утиліт до застосунків з інтеграцією зовнішніх сервісів та API.</p>
+                    <p class="srv-desc" data-i18n="srv_android_desc">Розробка мобільних застосунків під Android — від простих утиліт до застосунків з інтеграцією зовнішніх сервісів.</p>
+                    <ul class="srv-features">
+                        <li data-i18n="srv_android_f1">Нативна розробка (Kotlin / Java)</li>
+                        <li data-i18n="srv_android_f2">Інтеграція із зовнішніми API та сервісами</li>
+                        <li data-i18n="srv_android_f3">Адаптивний UI/UX під різні екрани</li>
+                        <li data-i18n="srv_android_f4">Готово до публікації в Play Store</li>
+                    </ul>
                 </div>
                 <!-- Автоматизація -->
-                <div class="spec-card glass fade-in" style="transition-delay: 300ms;">
-                    <div class="spec-icon" style="color: #f59e0b;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <div class="srv-card glass fade-in" style="transition-delay: 300ms;">
+                    <div class="srv-card-header">
+                        <div class="srv-icon" style="background: rgba(245,158,11,0.12); color: #f59e0b;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        </div>
+                        <h3 class="srv-title" data-i18n="srv_auto_title">Автоматизація процесів</h3>
                     </div>
-                    <h3 class="spec-title" data-i18n="srv_auto_title">Автоматизація процесів</h3>
-                    <p class="spec-desc" data-i18n="srv_auto_desc">Парсери, скрипти обробки даних, інтеграції між сервісами — якщо потрібно, щоб рутинна задача виконувалась без ручного втручання, можу це автоматизувати.</p>
+                    <p class="srv-desc" data-i18n="srv_auto_desc">Парсери, скрипти обробки даних, інтеграції між сервісами — рутинні задачі виконуються без ручного втручання.</p>
+                    <ul class="srv-features">
+                        <li data-i18n="srv_auto_f1">Веб-скрапінг та парсери (BeautifulSoup, Selenium)</li>
+                        <li data-i18n="srv_auto_f2">Обробка та трансформація даних (Excel, JSON, CSV)</li>
+                        <li data-i18n="srv_auto_f3">Інтеграції між API та сервісами</li>
+                        <li data-i18n="srv_auto_f4">Scheduled-задачі та фонові процеси</li>
+                    </ul>
                 </div>
                 <!-- Консультації -->
-                <div class="spec-card glass fade-in" style="transition-delay: 400ms;">
-                    <div class="spec-icon" style="color: #ec4899;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <div class="srv-card glass fade-in" style="transition-delay: 400ms;">
+                    <div class="srv-card-header">
+                        <div class="srv-icon" style="background: rgba(236,72,153,0.12); color: #ec4899;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <h3 class="srv-title" data-i18n="srv_consult_title">Консультації та доопрацювання</h3>
                     </div>
-                    <h3 class="spec-title" data-i18n="srv_consult_title">Консультації та доопрацювання проєктів</h3>
-                    <p class="spec-desc" data-i18n="srv_consult_desc">Готовий допомогти з доопрацюванням існуючого коду, виправленням багів або порадою щодо архітектури рішення.</p>
+                    <p class="srv-desc" data-i18n="srv_consult_desc">Допомагаю довести проєкт до ладу — незалежно від стадії: від аудиту коду до архітектурних рекомендацій.</p>
+                    <ul class="srv-features">
+                        <li data-i18n="srv_consult_f1">Code review та аудит кодової бази</li>
+                        <li data-i18n="srv_consult_f2">Виправлення багів і рефакторинг</li>
+                        <li data-i18n="srv_consult_f3">Архітектурні рекомендації</li>
+                        <li data-i18n="srv_consult_f4">Допомога з доробкою MVP до продакшну</li>
+                    </ul>
                 </div>
             </div>
         </section>
+
 
         <!-- Секция Проектов -->
         <section id="projects" class="projects container section-padding">
