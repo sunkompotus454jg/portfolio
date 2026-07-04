@@ -41,6 +41,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero" class="active" data-i18n="nav_home">Главная</a></li>
                 <li><a href="#specialization" data-i18n="nav_spec">Специализация</a></li>
+                <li><a href="#services" data-i18n="nav_services">Услуги</a></li>
                 <li><a href="#projects" data-i18n="nav_projects">Проекты</a></li>
                 <li><a href="#workflow" data-i18n="nav_process">Процесс</a></li>
                 <li><a href="#about" data-i18n="nav_about">Обо мне</a></li>
@@ -109,6 +110,66 @@
                     </div>
                     <h3 class="spec-title" data-i18n="spec_auto">Automation</h3>
                     <p class="spec-desc" data-i18n="spec_auto_desc">Скрипты, боты и веб-парсеры для автоматизации рутинных бизнес-задач.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Услуг -->
+        <section id="services" class="services container section-padding">
+            <div class="section-header text-center fade-in">
+                <h2 class="section-title"><span data-i18n="services_title_1">Мої</span> <span class="text-gradient" data-i18n="services_title_2">Послуги</span></h2>
+                <p class="section-subtitle" data-i18n="services_subtitle">Що саме я можу зробити для вас</p>
+            </div>
+            <div class="services-grid">
+                <!-- Десктоп-застосунки -->
+                <div class="service-card glass fade-in">
+                    <div class="service-icon" style="background: rgba(6, 182, 212, 0.15); color: #06b6d4;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <div class="service-body">
+                        <h3 class="service-title" data-i18n="srv_desktop_title">Розробка десктоп-застосунків</h3>
+                        <p class="service-desc" data-i18n="srv_desktop_desc">Створюю кастомні утиліти та інструменти під Windows — від автоматизації рутинних задач до застосунків з власним інтерфейсом під конкретні потреби користувача.</p>
+                    </div>
+                </div>
+                <!-- Telegram-боти -->
+                <div class="service-card glass fade-in" style="transition-delay:80ms">
+                    <div class="service-icon" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </div>
+                    <div class="service-body">
+                        <h3 class="service-title" data-i18n="srv_bots_title">Telegram-боти з інтеграцією AI</h3>
+                        <p class="service-desc" data-i18n="srv_bots_desc">Пишу ботів, які вміють більше за стандартні команди: розпізнавання голосу, робота з LLM, обробка запитів природною мовою, автоматичні відповіді та сценарії під бізнес-задачі.</p>
+                    </div>
+                </div>
+                <!-- Android -->
+                <div class="service-card glass fade-in" style="transition-delay:160ms">
+                    <div class="service-icon" style="background: rgba(52, 211, 153, 0.15); color: #34d399;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    </div>
+                    <div class="service-body">
+                        <h3 class="service-title" data-i18n="srv_android_title">Android-застосунки</h3>
+                        <p class="service-desc" data-i18n="srv_android_desc">Розробка мобільних застосунків під Android — від простих утиліт до застосунків з інтеграцією зовнішніх сервісів та API.</p>
+                    </div>
+                </div>
+                <!-- Автоматизація -->
+                <div class="service-card glass fade-in" style="transition-delay:240ms">
+                    <div class="service-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <div class="service-body">
+                        <h3 class="service-title" data-i18n="srv_auto_title">Автоматизація процесів</h3>
+                        <p class="service-desc" data-i18n="srv_auto_desc">Парсери, скрипти обробки даних, інтеграції між сервісами — якщо потрібно, щоб рутинна задача виконувалась без ручного втручання, можу це автоматизувати.</p>
+                    </div>
+                </div>
+                <!-- Консультації -->
+                <div class="service-card glass fade-in" style="transition-delay:320ms">
+                    <div class="service-icon" style="background: rgba(236, 72, 153, 0.15); color: #ec4899;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="service-body">
+                        <h3 class="service-title" data-i18n="srv_consult_title">Консультації та доопрацювання проєктів</h3>
+                        <p class="service-desc" data-i18n="srv_consult_desc">Готовий допомогти з доопрацюванням існуючого коду, виправленням багів або порадою щодо архітектури рішення.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -358,7 +419,7 @@
                     <a href="https://t.me/KoMpOTiK1" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, #0088cc, #00bfff);" data-i18n="btn_contact_tg">Написать в Telegram</a>
                     <a href="mailto:sunkompotus@gmail.com" class="btn btn-secondary glass" style="font-size: 1.1rem; padding: 1rem 2.5rem;" data-i18n="cta_email">Отправить Email</a>
                 </div>
-                <p class="text-muted" style="margin-top: 2rem; font-family: 'JetBrains Mono', monospace;">+38(063) 820 32 34</p>
+
             </div>
         </section>
     </main>
