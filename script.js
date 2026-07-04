@@ -114,12 +114,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.openLightbox = function (src, isVideo) {
         init();
         const inner = document.getElementById('lightboxInner');
-        inner.innerHTML = isVideo
-            ? `<video controls autoplay style="max-width:92vw;max-height:92vh;">
-                   <source src="${src}" type="video/quicktime">
-                   <source src="${src}" type="video/mp4">
-               </video>`
-            : `<img src="${src}" alt="fullscreen" style="max-width:92vw;max-height:92vh;display:block;border-radius:12px;">`;
+        if (isVideo) {
+            // Show video inside lightbox (fallback case)
+            inner.innerHTML = `<video controls autoplay style="max-width:92vw;max-height:92vh;">
+                <source src="${src}" type="video/quicktime">
+                <source src="${src}" type="video/mp4">
+            </video>`;
+        } else {
+            // Show image inside lightbox
+            inner.innerHTML = `<img src="${src}" alt="fullscreen" style="max-width:92vw;max-height:92vh;display:block;border-radius:12px;">`;
+        }
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     };
