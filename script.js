@@ -126,6 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeLightbox() {
         overlay.classList.remove('active');
+        // Pause any video playing in the lightbox
+        const video = document.querySelector('.lightbox-overlay.active video');
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
         document.body.style.overflow = '';
         const inner = document.getElementById('lightboxInner');
         if (inner) inner.innerHTML = '';

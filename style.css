@@ -438,6 +438,42 @@ header nav {
     margin-bottom: 1.5rem;
 }
 
+/* Lightbox Styles */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.lightbox-overlay.active {
+    display: flex;
+}
+.lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    z-index: 1001;
+}
+/* Responsive tweak for media layout */
+@media (max-width: 600px) {
+    .steam-layout {
+        grid-template-columns: 1fr;
+    }
+    .media-gallery, .main-media, .thumbnail-slider {
+        width: 100%;
+    }
+}
+
 .readme-content code {
     font-family: 'Consolas', 'Monaco', monospace;
     color: var(--accent-secondary);
