@@ -373,18 +373,147 @@ header nav {
     transform: translateY(0);
 }
 
-/* Адаптив */
+/* =============== MOBILE RESPONSIVE =============== */
 @media (max-width: 768px) {
+    .section-padding {
+        padding: 4rem 0;
+    }
+
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
-    
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
     .nav-links {
-        display: none; /* Для мобайла можно добавить бургер меню позже */
+        display: none;
     }
-    
+
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Spec grid: 2 cols on tablet, 1 on small */
+    .spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    /* Services: single column */
+    .srv-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Service card header: stack icon + title vertically if needed */
+    .srv-card-header {
+        flex-wrap: wrap;
+    }
+
+    .srv-title {
+        font-size: 1rem;
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* About section */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-photo-container {
+        aspect-ratio: 3/2;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    /* Timeline */
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+        padding-left: 60px;
+        padding-right: 0;
+    }
+
+    .timeline-item::before,
+    .timeline-item:nth-child(even)::before {
+        left: 12px;
+        right: auto;
+    }
+
+    /* Contact box */
+    .contact-box {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+    }
+
+    /* CTA section */
+    .flex-center[style*="gap"] {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Workflow */
+    .workflow-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .spec-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .srv-card {
+        padding: 1.25rem;
+    }
+
+    .spec-card {
+        padding: 1.25rem;
+    }
+
+    .nav-controls {
+        gap: 0.5rem;
+        margin-left: 0.5rem;
+    }
+
+    .lang-btn {
+        font-size: 0.72rem;
+        padding: 0.15rem 0.4rem;
     }
 }
 
@@ -1071,18 +1200,20 @@ header nav {
     transform: rotate(15deg);
 }
 
-/* Light Theme Override */
+/* Light Theme Override — applied to both html and body */
+html.light-theme,
 body.light-theme {
-    --bg-color: #f8fafc;
-    --surface-color: rgba(255, 255, 255, 0.7);
-    --surface-hover: rgba(255, 255, 255, 0.95);
+    --bg-color: #f0f4f8;
+    --surface-color: rgba(255, 255, 255, 0.75);
+    --surface-hover: rgba(255, 255, 255, 0.98);
     --border-color: rgba(0, 0, 0, 0.1);
     --text-main: #0f172a;
     --text-muted: #475569;
-    
     --accent-primary: #7c3aed;
     --accent-secondary: #0284c7;
     --accent-tertiary: #db2777;
+    background-color: var(--bg-color);
+    color: var(--text-main);
 }
 body.light-theme .glass {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
