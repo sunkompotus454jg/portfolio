@@ -24,15 +24,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.getElementById('navLinks');
 
     if (burgerMenu) {
+        const closeMobileMenu = () => {
+            navLinks.classList.remove('active');
+            burgerMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
         burgerMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            const isOpen = navLinks.classList.toggle('active');
+            burgerMenu.classList.toggle('active', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         });
         
         // Закрывать меню при клике на ссылку
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        navLinks.addEventListener('click', (event) => {
+            if (event.target === navLinks) {
+                closeMobileMenu();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMobileMenu();
+            }
         });
     }
 
