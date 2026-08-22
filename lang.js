@@ -127,7 +127,6 @@ const translations = {
         "desc_aether": "Десктопний AI-асистент із захопленням аудіо (Groq Whisper) та розпізнаванням екрану поверх усіх вікон.",
         "desc_aitrainer": "Інструмент для глибокого навчання. Аналізує матеріал через AI та генерує персональні тести.",
         "desc_deckboard": "Екосистема для управління ПК зі смартфона. Перемикання сцен OBS, макроси та автозапуск.",
-        "desc_androidcalc": "Сучасний додаток калькулятора для Android з розширеним функціоналом.",
         "desc_homecinema": "Власний локальний медіасервер. Зручна веб-адмінка та клієнт під Android TV.",
         "workflow_title_1": "Процес",
         "workflow_title_2": "Роботи",
@@ -216,14 +215,6 @@ const translations = {
         "ai_trainer_tech_p1": "За допомогою асинхронної оболонки класу <code>AIClient</code> Ви можете звертатися відразу до декількох моделей одночасно, або ж у різних чатах, при цьому не блокуючи основний потік виконання.",
         "ai_trainer_tech_p2": "<strong>Важлива примітка:</strong> Просимо не підвищувати значення лімітів, таких як <code>ThreadPoolExecutor(max_workers=4)</code> або <code>max_tokens=1200</code>, щоб надмірно не перевантажувати сервери провайдерів.",
         "ai_trainer_lang_title": "Локалізація",
-        "androidcalc_subtitle": "Мобільний додаток калькулятора з сучасним дизайном, готовий до інтеграції.",
-        "androidcalc_about_title": "Про проєкт",
-        "androidcalc_about_p": "Проєкт завершений і повністю готовий до інтеграції. Це повнофункціональний мобільний калькулятор для операційної системи Android із продуманим користувацьким інтерфейсом.",
-        "androidcalc_feat_title": "Особливості",
-        "androidcalc_feat_1": "Сучасний і чуйний UI/UX дизайн.",
-        "androidcalc_feat_2": "Підтримка всіх базових математичних операцій.",
-        "androidcalc_feat_3": "Оптимізовано для роботи на пристроях з різною роздільною здатністю екрану.",
-        "androidcalc_feat_4": "Чистий і добре задокументований код, готовий до розширення.",
         "deckboard_subtitle": "Потужна екосистема для дистанційного керування вашим комп'ютером прямо зі смартфона.",
         "deckboard_feat_title": " Основні можливості",
         "deckboard_android_title": " Android Додаток (Client)",
@@ -381,7 +372,6 @@ const translations = {
         "desc_aether": "Desktop AI assistant with audio capture (Groq Whisper) and screen recognition over all windows.",
         "desc_aitrainer": "Tool for deep learning. Analyzes material via AI and generates personalized tests.",
         "desc_deckboard": "PC control ecosystem from smartphone. OBS scene switching, macros, and auto-run.",
-        "desc_androidcalc": "Modern calculator app for Android with advanced features.",
         "desc_homecinema": "Custom local media server. Convenient web admin and Android TV client.",
         "workflow_title_1": "My",
         "workflow_title_2": "Workflow",
@@ -470,14 +460,6 @@ const translations = {
         "ai_trainer_tech_p1": "Using the asynchronous wrapper of the <code>AIClient</code> class, you can access multiple models simultaneously, or in different chats, without blocking the main execution thread.",
         "ai_trainer_tech_p2": "<strong>Important note:</strong> Please do not increase limits such as <code>ThreadPoolExecutor(max_workers=4)</code> or <code>max_tokens=1200</code> so as not to overload provider servers excessively.",
         "ai_trainer_lang_title": "Localization",
-        "androidcalc_subtitle": "Mobile calculator application with a modern design, ready for integration.",
-        "androidcalc_about_title": "About the project",
-        "androidcalc_about_p": "The project is completed and fully ready for integration. It is a fully functional mobile calculator for the Android operating system with a well-thought-out user interface.",
-        "androidcalc_feat_title": "Features",
-        "androidcalc_feat_1": "Modern and responsive UI/UX design.",
-        "androidcalc_feat_2": "Support for all basic mathematical operations.",
-        "androidcalc_feat_3": "Optimized for devices with different screen resolutions.",
-        "androidcalc_feat_4": "Clean and well-documented code, ready for expansion.",
         "deckboard_subtitle": "A powerful ecosystem for remote control of your computer directly from your smartphone.",
         "deckboard_feat_title": " Main features",
         "deckboard_android_title": " Android App (Client)",
@@ -635,7 +617,6 @@ const translations = {
         "desc_aether": "Десктопный AI-ассистент с захватом аудио (Groq Whisper) и распознаванием экрана поверх всех окон.",
         "desc_aitrainer": "Инструмент для глубокого обучения. Анализирует материал через AI и генерирует персональные тесты.",
         "desc_deckboard": "Экосистема для управления ПК со смартфона. Переключение сцен OBS, макросы и автозапуск.",
-        "desc_androidcalc": "Современное приложение калькулятора для Android с расширенным функционалом.",
         "desc_homecinema": "Собственный локальный медиасервер. Удобная веб-админка и клиент под Android TV.",
         "workflow_title_1": "Процесс",
         "workflow_title_2": "Работы",
@@ -727,15 +708,6 @@ const translations = {
         "ai_trainer_tech_p2": "<strong>Важное примечание:</strong> Просим не повышать значения лимитов, таких как <code>ThreadPoolExecutor(max_workers=4)</code> или <code>max_tokens=1200</code>, чтобы чрезмерно не перегружать сервера провайдеров.",
         "ai_trainer_lang_title": "Локализация",
 
-        "androidcalc_subtitle": "Мобильное приложение калькулятора с современным дизайном, готовое к интегрированию.",
-        "androidcalc_about_title": "О проекте",
-        "androidcalc_about_p": "Проект завершен и полностью готов к интегрированию. Представляет собой полнофункциональный мобильный калькулятор для операционной системы Android с продуманным пользовательским интерфейсом.",
-        "androidcalc_feat_title": "Особенности",
-        "androidcalc_feat_1": "Современный и отзывчивый UI/UX дизайн.",
-        "androidcalc_feat_2": "Поддержка всех базовых математических операций.",
-        "androidcalc_feat_3": "Оптимизировано для работы на устройствах с разным разрешением экрана.",
-        "androidcalc_feat_4": "Чистый и хорошо задокументированный код, готовый к расширению.",
-
         "deckboard_subtitle": "Мощная экосистема для дистанционного управления вашим компьютером прямо со смартфона.",
         "deckboard_feat_title": " Основные возможности",
         "deckboard_android_title": " Android Приложение (Client)",
@@ -774,7 +746,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const setLanguage = (lang) => {
         if (!translations[lang]) return;
-        localStorage.setItem('app_lang', lang);
+        localStorage.setItem('portfolio_lang', lang);
         
         elementsToTranslate.forEach(el => {
             const key = el.getAttribute('data-i18n');
@@ -792,7 +764,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    const savedLang = localStorage.getItem('app_lang') || 'uk';
+    const savedLang = localStorage.getItem('portfolio_lang') || 'uk';
     setLanguage(savedLang);
 
     langBtns.forEach(btn => {
@@ -806,7 +778,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const moonIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
     const sunIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
 
-    const savedTheme = localStorage.getItem('app_theme') || 'dark';
+    const savedTheme = localStorage.getItem('portfolio_theme') || 'dark';
     if (savedTheme === 'light') {
         document.body.classList.add('light-theme');
     }
@@ -824,8 +796,9 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             document.body.classList.toggle('light-theme');
-            localStorage.setItem('app_theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+            localStorage.setItem('portfolio_theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
             updateIcons();
         });
     });
 });
+
