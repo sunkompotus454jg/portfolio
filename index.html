@@ -464,29 +464,7 @@
     <script src="script.js"></script>
     <script src="lang.js"></script>
     <script>
-        // Theme toggle logic
-        (function () {
-            var btn = document.getElementById('theme-toggle');
-            var moon = btn.querySelector('.icon-moon');
-            var sun  = btn.querySelector('.icon-sun');
 
-            function applyTheme(isLight) {
-                document.documentElement.classList.toggle('light-theme', isLight);
-                document.body.classList.toggle('light-theme', isLight);
-                moon.style.display = isLight ? 'none'  : '';
-                sun.style.display  = isLight ? ''      : 'none';
-            }
-
-            // Apply saved preference on load
-            var saved = localStorage.getItem('theme') === 'light';
-            applyTheme(saved);
-
-            btn.addEventListener('click', function () {
-                var isLight = !document.body.classList.contains('light-theme');
-                applyTheme(isLight);
-                localStorage.setItem('theme', isLight ? 'light' : 'dark');
-            });
-        })();
     </script>
 </body>
 </html>
