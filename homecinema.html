@@ -86,7 +86,33 @@
             </div>
         </article>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainMediaContainer = document.getElementById('mainMediaContainer');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const type = this.getAttribute('data-type');
+                    const src = this.getAttribute('data-src');
+
+                    if (type === 'video') {
+                        mainMediaContainer.innerHTML = `<video controls autoplay style="width: 100%; height: 100%; object-fit: contain;">
+                            <source src="${src}" type="video/quicktime">
+                            <source src="${src}" type="video/mp4">
+                        </video>`;
+                    } else if (type === 'image' || !type) {
+                        mainMediaContainer.innerHTML = `<img src="${src}" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">`;
+                    }
+                });
+            });
+        });
+    </script>
     <script src="script.js"></script>
     <script src="lang.js"></script>
+    <script>(function(){var btn=document.getElementById('theme-toggle');if(!btn)return;var moon=btn.querySelector('.icon-moon'),sun=btn.querySelector('.icon-sun');function a(l){document.documentElement.classList.toggle('light-theme',l);document.body.classList.toggle('light-theme',l);if(moon)moon.style.display=l?'none':'';if(sun)sun.style.display=l?'':'none';}a(localStorage.getItem('theme')==='light');btn.addEventListener('click',function(){var l=!document.body.classList.contains('light-theme');a(l);localStorage.setItem('theme',l?'light':'dark');});})();</script>
 </body>
 </html>
